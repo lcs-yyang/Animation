@@ -23,34 +23,32 @@ class Sketch : NSObject {
         x = 250
         
         // Set the change value
-        dx = 3
+        dx = 2
         
         }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
-        
-        //clean up, draw a white rectangle over the whole canvas.
-        canvas.fillColor = Color.white
-        canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 500, height: 500)
-        
+    
         // Change position
         x += dx
         
-        // Make the circle bounce on the right edge
-        if x > 500 { // start of the block
-            dx = -3 // move left
-        } // end of block
-        
-        // Make the circle bounce on the left edge
-        if x < 0 { // start of the block
-            dx = 3 // move right
-        } //end of block
-
-        // Draw an ellipse in the middle of the canvas
-        canvas.fillColor = Color.black
+        // Draw an ellipse on top of the canvas (move to right)
+        canvas.fillColor = Color.purple
+        canvas.drawEllipse(centreX: x, centreY: 450, width: 50, height: 50)
+        canvas.fillColor = Color.green
         canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
+        canvas.fillColor = Color.black
+        canvas.drawEllipse(centreX: x, centreY: 50, width: 50, height: 50)
         
+        
+        // Draw an ellipse on top of the canvas (move to left)
+        canvas.fillColor = Color.orange
+        canvas.drawEllipse(centreX: 500-x, centreY: 350, width: 50, height: 50)
+        canvas.fillColor = Color.blue
+        canvas.drawEllipse(centreX: 500-x, centreY: 150, width: 50, height: 50)
+
+
     }
 
     
