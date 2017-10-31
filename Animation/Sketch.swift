@@ -34,6 +34,7 @@ class Sketch : NSObject {
         x += dx
         
         // Draw an ellipse on top of the canvas (move to right)
+        canvas.drawShapesWithBorders = false
         canvas.fillColor = Color.purple
         canvas.drawEllipse(centreX: x, centreY: 450, width: 50, height: 50)
         canvas.fillColor = Color.green
