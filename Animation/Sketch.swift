@@ -40,19 +40,21 @@ class Sketch : NSObject {
         canvas.fillColor = Color.black
         canvas.drawEllipse(centreX: x, centreY: y, width: 50, height: 50)
         if x > 500 { //move left when hit the right edge
-            dx = -5
-        if y > 500 { //move left when hit the right edge
-            dy = -5}
-        }
+            dx = -5 }
         if x < 0 { // move right when hit the left edge
-            dx = 5
+            dx = 5 }
+                
+        if y > 500 { //move left when hit the right edge
+            dy = -5 }
         if y < 0 { // move right when hit the left edge
-            dy = 5}
+            dy = 5 }
+       
+        
         }
         
     }
     
-}
+
 
 
     
